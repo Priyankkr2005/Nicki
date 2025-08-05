@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hola Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .gender-options {
+      font-size: 1.2em;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px 30px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    label {
+      margin: 0 15px;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+      transform: scale(1.2);
+      accent-color: #b86fff;
+    }
+
+    button {
+      padding: 10px 25px;
+      background-color: #b86fff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #9e50e3;
+    }
+  </style>
+</head>
+<body>
+
+  <video class="bg-video" autoplay muted loop>
+    <source src="cat2.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <div class="content">
+    <h1>Holaaaa chico/chica</h1>
+    <p>May I know your gender :)</p>
+    <div class="gender-options">
+      <label>
+        <input type="radio" name="gender" value="male"> Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="female"> Female
+      </label>
+    </div>
+    <button onclick="submitGender()">Submit</button>
+  </div>
+
+  <script>
+    function submitGender() {
+      const gender = document.querySelector('input[name="gender"]:checked');
+      if (!gender) return alert('Please select a gender');
+      if (gender.value === 'female') {
+        window.location.href = 'sorry.html';
+      } else {
+        window.location.href = 'name.html';
+      }
+    }
+  </script>
+</body>
+</html>

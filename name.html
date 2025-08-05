@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enter Name</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    img.bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #b86fff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #9e50e3;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🌄 Background image -->
+  <img class="bg" src="catn.gif" alt="background" />
+
+  <h1>Enter your full name chico :D</h1>
+  <input type="text" id="fullname" placeholder="Enter full name" />
+  <button onclick="checkName()">Submit</button>
+
+  <script>
+    function checkName() {
+      const name = document.getElementById('fullname').value.trim().toLowerCase();
+      if (name === 'nikunj agarwal') {
+        // 🎉 Open welcome page in new tab
+        window.open('welcome.html', '_blank');
+      } else {
+        // 😢 Redirect to not-nikunj page
+        window.location.href = 'nonikunj.html';
+      }
+    }
+  </script>
+</body>
+</html>
